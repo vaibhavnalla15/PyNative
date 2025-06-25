@@ -14,4 +14,3 @@ str1 = "pynative.com is for python lovers"
 
 capitalized_string = capitalize_words(str1)
 print("Capitalized string:", capitalized_string)
-
