@@ -59,19 +59,5 @@ python-basic-exercises/
 
 ---
 
-## ▶️ How to Run
-
-Make sure Python is installed. Then:
-
-```bash
-# Clone the repo
-git clone https://github.com/yourusername/python-basic-exercises.git
-
-cd python-basic-exercises
-
-# Run any exercise like:
-python exercise_01.py
-
-
 🧑‍💻 Author
 Vaibhav Nalla – @vaibhavnalla15
