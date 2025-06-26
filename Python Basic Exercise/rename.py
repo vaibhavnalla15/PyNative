@@ -1,6 +1,6 @@
 # 🔁 Script to Rename Python Files with Leading Zeros
 # This script renames files like "Exercise 1.py", "Exercise 2.py", etc.
-# to "Exercise01.py", "Exercise02.py", ..., so they appear in correct order when viewed on GitHub or in any file explorer.
+# to "Exercise01 (First 10 natural numbers).py", "Exercise02.py", ..., so they appear in correct order when viewed on GitHub or in any file explorer.
 # Useful for sorting exercises or projects numerically.
 
 import os
