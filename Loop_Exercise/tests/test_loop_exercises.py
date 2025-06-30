@@ -1,7 +1,7 @@
 import os
+import pytest
 
 base_path = "Loop_Exercise"
-
 
 def test_exercise01():
     assert os.system(f'python "{base_path}/Exercise01 (First 10 natural numbers).py"') == 0
@@ -9,15 +9,18 @@ def test_exercise01():
 def test_exercise02():
     assert os.system(f'python "{base_path}/Exercise02 (Pattern Printing).py"') == 0
 
+@pytest.mark.skip(reason="Requires user input")
 def test_exercise03():
     assert os.system(f'python "{base_path}/Exercise03 (Sum of 1-10).py"') == 0
 
+@pytest.mark.skip(reason="Requires user input")
 def test_exercise04():
     assert os.system(f'python "{base_path}/Exercise04 (Multiplication Table).py"') == 0
 
 def test_exercise05():
     assert os.system(f'python "{base_path}/Exercise05 (Display numbers from a list).py"') == 0
 
+@pytest.mark.skip(reason="Requires user input")
 def test_exercise06():
     assert os.system(f'python "{base_path}/Exercise06 (Count the total number).py"') == 0
 
@@ -47,3 +50,9 @@ def test_exercise14():
 
 def test_exercise15():
     assert os.system(f'python "{base_path}/Exercise15.py"') == 0
+
+def test_exercise16():
+    assert os.system(f'python "{base_path}/Exercise16 (Cube of given numbers).py"') == 0
+
+def test_exercise17():
+    assert os.system(f'python "{base_path}/Exercise17 (Sum of series of numbers).py"') == 0
