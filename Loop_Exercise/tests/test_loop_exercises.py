@@ -56,3 +56,7 @@ def test_exercise16():
 
 def test_exercise17():
     assert os.system(f'python "{base_path}/Exercise17 (Sum of series of numbers).py"') == 0
+
+def test_exercise18():
+    assert os.system(f'python "{base_path}/Exercise18 (Pattern Printing).py"') == 0
+
