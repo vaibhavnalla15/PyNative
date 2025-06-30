@@ -1,6 +1,6 @@
 import os
 
-base_path = os.path.join("PyNative", "Loop Exercise")
+base_path = os.path.join("PyNative", "Loop_Exercise")
 
 
 def test_exercise01():
