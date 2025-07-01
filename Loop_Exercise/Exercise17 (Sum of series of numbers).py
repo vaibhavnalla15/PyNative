@@ -21,4 +21,6 @@ for i in range(0, terms):
     print(num , end=" + ")
     sum += num
     num = num * 10 + 2
+
 print("\nSum of above series is: ", sum)
+
