@@ -32,7 +32,7 @@ jobs:
 
       - name: Run Functions Exercise tests
         run: |
-          pytest "Function Exercise/tests"
+          pytest "Functions Exercise/tests"
 
       - name: Run Python_Input_and_Output_Exercise tests
         run: |
