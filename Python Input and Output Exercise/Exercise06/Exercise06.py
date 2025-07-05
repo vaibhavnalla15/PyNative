@@ -1,14 +1,14 @@
 """ Write all content of a file into a new file by skipping line number 5 """
 # Hints:-
-# 1. Read all lines from the ‘test.txt’ file using the readlines() method.
+# 1. Read all lines from the ‘tests.txt’ file using the readlines() method.
 # 2. This method returns all lines from a file as a list.
 # 3. Open a new text file in write mode ('w').
 # 4. Set counter = 0. Iterate through each line from the list.
 # 5. If the counter is 4, skip that line; otherwise, write that line to the new text file using the write() method.
 # 6. Increment counter by 1 in each iteration.
 
-# TODO :- Create a test.txt file and add content to it.
-# read test.txt
+# TODO :- Create a tests.txt file and add content to it.
+# read tests.txt
 with open("test.txt", "r") as file:
     # read all lines from a file
     lines = file.readlines()
