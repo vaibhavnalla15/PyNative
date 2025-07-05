@@ -6,7 +6,7 @@
 
 def capitalize_words(text):
     words = text.split()                                        # Split the string into a list of words
-    capitalized_words = [words.capitalize() for word in words]  # Capitalize each word
+    capitalized_words = [word.capitalize() for word in words]  # Capitalize each word
     return " ".join(capitalized_words)                          # Join the capitalized words back into a string
 
 # Get input from the user
