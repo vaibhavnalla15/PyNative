@@ -2,7 +2,7 @@ import os
 import glob
 import pytest
 
-base_path = "Python Basic Exercise"  # Change this to your folder name
+base_path = "Functions Exercise"  # Change this to your folder name
 
 exercise_files = glob.glob(os.path.join(base_path, "Exercise*.py"))
 
