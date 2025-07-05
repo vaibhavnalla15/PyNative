@@ -22,6 +22,18 @@ jobs:
           python -m pip install --upgrade pip
           pip install pytest
 
-      - name: Run tests
+      - name: Run Loop_Exercise tests
         run: |
           pytest "Loop_Exercise/tests"
+
+      - name: Run Python Basic Exercise tests
+        run: |
+          pytest "Python Basic Exercise/tests"
+
+      - name: Run Functions Exercise tests
+        run: |
+          pytest "Function Exercise/tests"
+
+      - name: Run Python_Input_and_Output_Exercise tests
+        run: |
+          pytest "Python_Input_and_Output_Exercise/tests"
