@@ -37,3 +37,8 @@ jobs:
       - name: Run Python_Input_and_Output_Exercise tests
         run: |
           pytest "Python_Input_and_Output_Exercise/tests"
+
+      - name: Run String Exercise tests
+        run: |
+          pytest "String Exercise/tests"
+
