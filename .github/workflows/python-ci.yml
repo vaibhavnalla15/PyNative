@@ -42,3 +42,11 @@ jobs:
         run: |
           pytest "String Exercise/tests"
 
+      - name: Run Data Structure Exercise tests
+        run: |
+          pytest "Data Structure Exercise/tests"
+
+      - name: Run Python List Exercise tests
+        run: |
+          pytest "Python List Exercise/tests"
+
