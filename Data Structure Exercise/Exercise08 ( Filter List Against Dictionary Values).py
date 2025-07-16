@@ -9,3 +9,4 @@ print("Dictionary:", sample_dict)
 
 roll_number[:] = [items for items in roll_number if items in sample_dict.values()]
 print("after removing unwanted elements from list:", roll_number)
+
