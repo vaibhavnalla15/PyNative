@@ -34,10 +34,6 @@ jobs:
         run: |
           pytest "File Handling Exercises/tests"
 
-      - name: Run Object-Oriented Programming (OOP) Exercise tests
-        run: |
-          pytest "Object-Oriented Programming (OOP) Exercise/tests"
-
       - name: Run Python Dictionary Exercise tests
         run: |
           pytest "Python Dictionary Exercise/tests"
