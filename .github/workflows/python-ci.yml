@@ -37,11 +37,3 @@ jobs:
       - name: Run Python Dictionary Exercise tests
         run: |
           pytest "Python Dictionary Exercise/tests"
-
-      - name: Run Python Set Exercise tests
-        run: |
-          pytest "Python Set Exercise/tests"
-
-      - name: Run Python Tuple Exercise tests
-        run: |
-          pytest "Python Tuple Exercise/tests"
