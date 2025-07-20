@@ -19,3 +19,4 @@ else:
     print("date_2 is greater")
     delta = date_2 - date_1
 print("Difference is", delta.days, "days")
+
