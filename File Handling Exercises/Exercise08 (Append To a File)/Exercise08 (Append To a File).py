@@ -1,5 +1,5 @@
 """ Append To a File """
-# Modify the previous program to append the string “This is an appended line.” to the end of “output.txt”.
+# Modify the previous program to append the string “This is an appended line.” to the end of “output.txt which is created in Exercise07”.
 # Hints:-
 # You need to open file in a different mode that allows you to add content to the end. Use a mode.
 
