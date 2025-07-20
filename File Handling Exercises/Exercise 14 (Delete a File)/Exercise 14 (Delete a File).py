@@ -17,4 +17,10 @@ def file_to_remove(filename):
 
 # Example Usage:-
 file_to_delete = "sample.txt"
-print(file_to_remove(file_to_delete))
+
+# Create a dummy file to test deletion
+with open(file_to_delete, 'w') as f:
+    f.write("This file will be deleted.")
+
+result = file_to_remove(file_to_delete)
+print(result)
