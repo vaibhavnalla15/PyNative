@@ -48,3 +48,4 @@ def test_exercise_file(exercise_file):
         assert result.returncode == 0, f"❌ {file_name} failed\n{result.stderr}"
     except subprocess.TimeoutExpired:
         pytest.fail(f"⏳ {file_name} timed out (over 5s)")
+
