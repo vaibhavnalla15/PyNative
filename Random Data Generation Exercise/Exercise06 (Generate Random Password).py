@@ -30,7 +30,7 @@ def generate_password():
 
 
 # Generate and print
-print("🔐 Your secure password is:", generate_password())
+print("Your secure password is:", generate_password())
 
 
 
