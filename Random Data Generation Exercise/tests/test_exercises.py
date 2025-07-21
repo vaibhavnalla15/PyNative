@@ -2,59 +2,49 @@ import os
 import subprocess
 import pytest
 
-# ✅ Get absolute path to the exercise folder
-BASE_DIR = os.path.dirname(__file__)  # path to /tests
-EXERCISE_DIR = os.path.abspath(os.path.join(BASE_DIR, ".."))  # path to /Random Data Generation Exercise
+# Step 1: Get the path to the exercises folder
+BASE_DIR = os.path.dirname(__file__)  # tests/
+EXERCISE_DIR = os.path.abspath(os.path.join(BASE_DIR, ".."))  # Random Data Generation Exercise/
 
-# ✅ Grab all exercise .py files
+# Step 2: Gather all .py files in the folder
 exercise_files = [
     os.path.join(EXERCISE_DIR, f)
     for f in os.listdir(EXERCISE_DIR)
     if f.endswith(".py")
 ]
 
-def needs_input(file_path):
+# Step 3: Function to detect risky patterns
+def is_risky(file_path):
     with open(file_path, "r", encoding="utf-8") as f:
-        return "input(" in f.read()
+        code = f.read()
 
-def has_infinite_or_gui_code(file_path):
-    with open(file_path, "r", encoding="utf-8") as f:
-        content = f.read()
-
-        if "tkinter" in content or "webbrowser" in content:
-            return "tkinter or webbrowser"
-
-        if content.count("secrets.SystemRandom") > 3:
-            return "secrets.SystemRandom() in loop"
-
-        return None
-
-def has_long_sleep(file_path):
-    with open(file_path, "r", encoding="utf-8") as f:
-        content = f.read()
-        return "time.sleep(" in content and any(d in content for d in ["10", "15", "20"])
+    if "input(" in code:
+        return "uses input()"
+    if "tkinter" in code or "webbrowser" in code:
+        return "GUI module"
+    if code.count("secrets.SystemRandom") > 2:
+        return "too many secrets.SystemRandom"
+    if "time.sleep(" in code and any(x in code for x in ["10", "15", "20"]):
+        return "long sleep"
+    return None
 
 @pytest.mark.parametrize("exercise_file", exercise_files)
 def test_exercise_file(exercise_file):
     file_name = os.path.basename(exercise_file)
 
-    if needs_input(exercise_file):
-        pytest.skip(f"❌ Skipped {file_name} (uses input())")
+    # Step 4: Check if it's risky and skip or fail
+    risk = is_risky(exercise_file)
+    if risk:
+        pytest.skip(f"⛔ Skipped {file_name} — {risk}")
 
-    risky_code = has_infinite_or_gui_code(exercise_file)
-    if risky_code:
-        pytest.fail(f"🚨 {file_name} contains risky pattern: {risky_code}")
-
-    if has_long_sleep(exercise_file):
-        pytest.fail(f"🕒 {file_name} contains long time.sleep()")
-
+    # Step 5: Run with a 5-second timeout
     try:
         result = subprocess.run(
             ["python", exercise_file],
-            timeout=10,
             capture_output=True,
-            text=True
+            text=True,
+            timeout=5  # ⏱ Timeout to prevent hang
         )
         assert result.returncode == 0, f"❌ {file_name} failed\n{result.stderr}"
     except subprocess.TimeoutExpired:
-        pytest.fail(f"⏳ {file_name} timed out (>10s)")
+        pytest.fail(f"⏳ {file_name} timed out (over 5s)")
