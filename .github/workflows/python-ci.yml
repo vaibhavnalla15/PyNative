@@ -31,7 +31,7 @@ jobs:
         run: |
           pytest "Functions Exercise/tests"
 
-      - name: Run Random Data Generation Exercise tests
+      - name: Run Fast Tests
         run: |
           pytest "Random Data Generation Exercise/tests"
 
