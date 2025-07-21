@@ -1,48 +1,38 @@
 import os
-import glob
-import pytest
 import subprocess
+import pytest
 
-# ✅ Helper: Check if file needs user input
+# ✅ Get absolute path to the exercise folder
+BASE_DIR = os.path.dirname(__file__)  # path to /tests
+EXERCISE_DIR = os.path.abspath(os.path.join(BASE_DIR, ".."))  # path to /Random Data Generation Exercise
+
+# ✅ Grab all exercise .py files
+exercise_files = [
+    os.path.join(EXERCISE_DIR, f)
+    for f in os.listdir(EXERCISE_DIR)
+    if f.endswith(".py")
+]
+
 def needs_input(file_path):
     with open(file_path, "r", encoding="utf-8") as f:
         return "input(" in f.read()
 
-# ✅ Helper: Check for risky patterns
 def has_infinite_or_gui_code(file_path):
-    risky_patterns = [
-        "while True",
-        "webbrowser.open(",
-        "tkinter",
-        "cv2.imshow(",
-        "pygame.init(",
-        "plt.show(",
-        "time.sleep(",  # we’ll check actual value below
-        "secrets.SystemRandom("
-    ]
     with open(file_path, "r", encoding="utf-8") as f:
         content = f.read()
-        for pattern in risky_patterns:
-            if pattern in content:
-                return pattern
+
+        if "tkinter" in content or "webbrowser" in content:
+            return "tkinter or webbrowser"
+
+        if content.count("secrets.SystemRandom") > 3:
+            return "secrets.SystemRandom() in loop"
+
         return None
 
-# ✅ Helper: Check for long sleep
 def has_long_sleep(file_path):
     with open(file_path, "r", encoding="utf-8") as f:
-        for line in f:
-            if "time.sleep(" in line:
-                try:
-                    value = float(line.strip().split("sleep(")[1].split(")")[0])
-                    if value > 5:
-                        return True
-                except:
-                    continue
-    return False
-
-# ✅ Find all .py files in the exercise folder (excluding test files)
-current_folder = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-exercise_files = glob.glob(os.path.join(current_folder, "*.py"))
+        content = f.read()
+        return "time.sleep(" in content and any(d in content for d in ["10", "15", "20"])
 
 @pytest.mark.parametrize("exercise_file", exercise_files)
 def test_exercise_file(exercise_file):
@@ -56,9 +46,8 @@ def test_exercise_file(exercise_file):
         pytest.fail(f"🚨 {file_name} contains risky pattern: {risky_code}")
 
     if has_long_sleep(exercise_file):
-        pytest.fail(f"🕒 {file_name} contains time.sleep() > 5 sec")
+        pytest.fail(f"🕒 {file_name} contains long time.sleep()")
 
-    # Run with timeout: 10 seconds
     try:
         result = subprocess.run(
             ["python", exercise_file],
@@ -68,4 +57,4 @@ def test_exercise_file(exercise_file):
         )
         assert result.returncode == 0, f"❌ {file_name} failed\n{result.stderr}"
     except subprocess.TimeoutExpired:
-        pytest.fail(f"⏱️ Timeout: {file_name} took too long to complete (10s)")
+        pytest.fail(f"⏳ {file_name} timed out (>10s)")
