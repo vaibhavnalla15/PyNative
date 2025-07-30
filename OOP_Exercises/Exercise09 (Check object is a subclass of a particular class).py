@@ -8,3 +8,20 @@
 
 # Use the issubclass() function. The issubclass(potential_subclass, potential_superclass) returns True if the first argument is a subclass (or the same class) of the second argument, and False otherwise.
 
+class Animal:
+    pass
+
+class Dog(Animal):
+    pass
+
+class Puppy(Dog):
+    pass
+
+class Cat:
+    pass
+
+print(issubclass(Dog, Animal))      # returns True
+print(issubclass(Animal, Dog))      # returns False
+print(issubclass(Cat, Animal))      # returns False
+print(issubclass(Puppy, Animal))    # returns True
+
