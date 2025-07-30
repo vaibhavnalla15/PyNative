@@ -14,6 +14,6 @@ class Bike:                                     # This class does not belongs to
     pass
 
 School_bus = Bus("School Volvo", 12, 50)
-print(isinstance(School_bus, Vehicle))          # This class Vehicle give True, also we can use Bus class also.
+print(isinstance(School_bus, Vehicle))          # This class Vehicle returns True, also we can use Bus class also.
 
-print(isinstance(School_bus, Bike))             # This class Bike give False, because School bus object does not belong to Bike class.
+print(isinstance(School_bus, Bike))             # This class Bike returns False, because School bus object does not belong to Bike class.
