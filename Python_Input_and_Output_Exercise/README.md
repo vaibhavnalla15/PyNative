@@ -64,6 +64,3 @@ Python Input and Output Exercise/
 
 ---
 
-🧑‍💻 Author
-Vaibhav Nalla – @vaibhavnalla15
-
