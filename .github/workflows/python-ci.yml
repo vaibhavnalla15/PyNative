@@ -24,4 +24,49 @@ jobs:
           pip install python-dateutil
 
       - name: Run OOP tests
-        run: pytest "OOP_Exercises/tests"
+        run: |
+          pytest "OOP_Exercises/tests"
+
+      - name: Run String Exercise tests
+        run: |
+          pytest "String Exercise/tests"
+
+      - name: Run Functions Exercise tests
+        run: |
+          pytest "Functions Exercise/tests"
+
+      - name: Run Fast Tests
+        run: |
+          pytest "Random Data Generation Exercise/tests"
+
+      - name: Run Python Input and Output Exercise tests
+        run: |
+            pytest "Python_Input_and_Output_Exercise/tests"
+
+      - name: Run Data Structure Exercise tests
+        run: |
+          pytest "Data Structure Exercise/tests"
+
+      - name: Run Date and Time Exercise tests
+        run: |
+          pytest "Date and Time Exercise/tests"
+
+      - name: Run Loop Exercise tests
+        run: |
+          pytest "Loop_Exercise/tests"
+
+      - name: Run File Handling Exercises tests
+        run: |
+          pytest "File Handling Exercises/tests"
+
+      - name: Run Python Basic Exercise tests
+        run: |
+          pytest "Python Basic Exercise/tests"
+
+      - name: Run Python List Exercise tests
+        run: |
+          pytest "Python List Exercise/tests"
+
+      - name: Run Python Dictionary Exercise tests
+        run: |
+          pytest "Python Dictionary Exercise/tests"
