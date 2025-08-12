@@ -242,6 +242,35 @@ This folder contains beginner-to-intermediate level exercises on **Object-Orient
 
 ---
 
+## OOP_Exercises_New
+| Exercise No. | Title                                         |
+|--------------|-----------------------------------------------|
+| ✅ 01         | [Exercise01](OOP_Exercises_New/Exercise01.py) |
+| ✅ 02         | [Exercise02](OOP_Exercises_New/Exercise02.py) |
+| ✅ 03         | [Exercise03](OOP_Exercises_New/Exercise03.py) |
+| ✅ 04         | [Exercise04](OOP_Exercises_New/Exercise04.py) |
+| ✅ 05         | [Exercise05](OOP_Exercises_New/Exercise05.py) |
+| ✅ 06         | [Exercise06](OOP_Exercises_New/Exercise06.py) |
+| ✅ 07         | [Exercise07](OOP_Exercises_New/Exercise07.py) |
+| ✅ 08         | [Exercise08](OOP_Exercises_New/Exercise08.py) |
+| ✅ 09         | [Exercise09](OOP_Exercises_New/Exercise09.py) |
+| ✅ 10         | [Exercise10](OOP_Exercises_New/Exercise10.py) |
+| ✅ 11         | [Exercise11](OOP_Exercises_New/Exercise11.py) |
+| ✅ 12         | [Exercise12](OOP_Exercises_New/Exercise12.py) |
+| ✅ 13         | [Exercise13](OOP_Exercises_New/Exercise13.py) |
+| ✅ 14         | [Exercise14](OOP_Exercises_New/Exercise14.py) |
+| ✅ 15         | [Exercise15](OOP_Exercises_New/Exercise15.py) |
+| ✅ 16         | [Exercise16](OOP_Exercises_New/Exercise16.py) |
+| ✅ 17         | [Exercise17](OOP_Exercises_New/Exercise17.py) |
+| ✅ 18         | [Exercise18](OOP_Exercises_New/Exercise18.py) |
+| ✅ 19         | [Exercise19](OOP_Exercises_New/Exercise19.py) |
+| ✅ 20         | [Exercise20](OOP_Exercises_New/Exercise20.py) |
+| ✅ 21         | [Exercise21](OOP_Exercises_New/Exercise21.py) |
+| ✅ 22         | [Exercise22](OOP_Exercises_New/Exercise22.py) |
+| ✅ 23         | [Exercise23](OOP_Exercises_New/Exercise23.py) |
+| ✅ 24         | [Exercise24](OOP_Exercises_New/Exercise24.py) |
+
+
 🧠 Key OOP Concepts Practiced
 ✅ Classes & Objects
 
