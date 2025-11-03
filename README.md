@@ -1,4 +1,3 @@
-[![GitHub Streak](https://github-readme-streak-stats.herokuapp.com?user=vaibhavnalla15&theme=transparent&hide_border=true&date_format=j%2Fn%5B%2FY%5D)](https://git.io/streak-stats)
 # 📦 Data Structure Exercise
 
 A beginner-friendly collection of Python exercises focusing on **Lists**, **Sets**, and **Dictionaries** — perfect for building a strong foundation in Python data structures.
